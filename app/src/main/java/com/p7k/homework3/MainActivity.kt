@@ -2,9 +2,11 @@ package com.p7k.homework3
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.view.*
+import kotlinx.android.synthetic.main.teamlayout.*
 
 public class MainActivity : AppCompatActivity() {
 
@@ -13,11 +15,26 @@ public class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-       button.setOnClickListener {
-           textView.text= "Add: "+(editText.text.toString().toInt()+editText2.text.toString().toInt()).toString()
-           textView2.text= "Sub: "+(editText.text.toString().toInt()-editText2.text.toString().toInt()).toString()
-           textView3.text= "Mul: "+(editText.text.toString().toInt()*editText2.text.toString().toInt()).toString()
-           textView4.text= "Div: "+(editText.text.toString().toInt()/editText2.text.toString().toInt()).toString()
-       }
+
+        plus.setOnClickListener{
+            var a = editText.text.toString().toDouble()
+            var b = editText2.text.toString().toDouble()
+            result.text= "Result: "+(a+b).toString()
+        }
+        minus.setOnClickListener{
+            var a = editText.text.toString().toDouble()
+            var b = editText2.text.toString().toDouble()
+            result.text="Result: "+(a-b).toString()
+        }
+        multiply.setOnClickListener{
+            var a = editText.text.toString().toDouble()
+            var b = editText2.text.toString().toDouble()
+            result.text= "Result: "+(a*b).toString()
+        }
+            division.setOnClickListener{
+                var a = editText.text.toString().toDouble()
+                var b = editText2.text.toString().toDouble()
+                result.text="Result: "+ (a/b).toString()
+            }
     }
 }
